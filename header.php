@@ -29,9 +29,9 @@
               <a class="nav-link" href="mailto://contact@econrad.org">Contact</a>
             </li>
           </ul>
-          <form class="form-inline" role="search">
+          <!-- <form class="form-inline" role="search">
             <input class="search js-search form-control form-control-rounded me-sm-2" type="text" title="Enter search query here.." placeholder="Search.." aria-label="Search">
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>
