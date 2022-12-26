@@ -27,7 +27,8 @@
           <article class="card mb-4">
             <header class="card-header text-center">
               <div class="card-meta">
-                <a href="#"><time class="timeago" datetime="2021-09-26 20:00">12 march 2022</time></a> in <a href="page-category.html">Electronics</a>
+                <time class="timeago" datetime="2021-09-26 20:00">12 march 2022</time> in     
+                <?php $section = explode("/", $_SERVER['REQUEST_URI'], -1)[1];?> in <?php print ucfirst($section)?>   
               </div>
               <h1 class="card-title">Modifying a New Nintendo 3ds to Charge over USB-C</h1>
             </header>
@@ -76,7 +77,6 @@
         <div class="col-md-3 ms-auto">
 
           <?php include "../side.php"; ?>
-          </aside>
 
         </div>
       </div>
