@@ -8,7 +8,7 @@
     </a>
 </header>
 <a href="music/natures-crescendo-cover">
-    <img class="card-img" src="img/music/azalea-town/1.png" alt="" />
+    <img class="card-img" src="img/music/natures-crescendo/1.png" alt="" />
 </a>
 <div class="card-body">
     <p class="card-text">A cover of Stardew Valley's Nature's Crescendo.</p>

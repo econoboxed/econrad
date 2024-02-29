@@ -1,7 +1,7 @@
 <article class="card mb-4">
 <header class="card-header">
     <div class="card-meta">
-        <time class="timeago" datetime="2022-03-12 20:00">12 march 2022</time>in Electronics
+        <time class="timeago" datetime="2022-03-12 20:00">12 march 2022</time> in Electronics
     </div>
     <a href="electronics/new-3ds-usbc-mod">
     <h4 class="card-title">USB-C N3ds</h4>

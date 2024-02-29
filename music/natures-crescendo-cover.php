@@ -34,7 +34,7 @@
               </div>
               <h1 class="card-title">"Nature's Crescendo" Cover</h1>
             </header>
-            <img class="img" src="../img/music/azalea-town/1.png" alt="" />
+            <img class="img" src="../img/music/natures-crescendo/1.png" alt="" />
             <p>&emsp;A cover of Stardew Valley's Nature's Crescendo, on Flute, Melodica, Glockenspiel, Electric Piano, and Synths.</p>
 
             <audio controls src="../mus/natures-crescendo-cover.mp3">

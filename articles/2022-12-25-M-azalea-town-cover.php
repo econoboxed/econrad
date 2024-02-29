@@ -8,7 +8,7 @@
     </a>
 </header>
 <a href="music/azalea-town-cover">
-    <img class="card-img" src="img/music/natures-crescendo/1.png" alt="" />
+    <img class="card-img" src="img/music/azalea-town/1.png" alt="" />
 </a>
 <div class="card-body">
     <p class="card-text">A cover of Pokémon HGSS' Azalea Town, on Clarinet, Saxophone, Flute, and Piano.</p>
