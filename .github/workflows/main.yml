@@ -16,4 +16,4 @@ jobs:
         private-ssh-key: ${{ secrets.PRIVATE_SSH_KEY }}
         ssh-port: 22
         destination-path: ~/web/
-        rsync-options: --dry-run --archive --verbose --compress --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
+        rsync-options: --archive --verbose --compress --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
