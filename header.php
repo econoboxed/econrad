@@ -6,7 +6,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a class="navbar-brand mx-auto order-1 order-md-3" href="/">econrad.org</a>
+        <a class="navbar-brand mx-auto order-1 order-md-3" href="/"><h1>econrad.org</h1></a>
 
         <div class="collapse navbar-collapse order-4 order-md-4" id="navbar-right">
           <ul class="navbar-nav ms-auto">
@@ -15,6 +15,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="mailto://contact@econrad.org">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/econoboxed">Github</a>
             </li>
           </ul>
         </div>
