@@ -10,7 +10,17 @@
 
   <title>econrad.org</title>
 
-  <link href="css/app.css" rel="stylesheet">
+  <link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+
+  <style>
+  .dropshadow{
+    border-radius:5px;
+  }
+  .dropshadow:hover {
+    box-shadow: 0 0 11px rgba(22,22,22,.5); 
+  }
+  </style>
 </head>
 
 <body>
@@ -20,50 +30,68 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-8">
           <?php
-          if (array_key_exists('electronics', $_POST)) {
-            electronics();
-          } else if (array_key_exists('music', $_POST)) {
-            music();
-          } else if (array_key_exists('other', $_POST)) {
-            other();
-          } else {
-            $list = glob("articles/*.php");
-            natsort($list);
-            foreach (array_reverse($list) as $filename) {
-              require_once($filename);
-            }
+
+          // CHANGE THIS TO WHERE/HOWEVER YOU KEEP YOUR SQL CREDENTIALS
+          include "sql.php";
+
+          $type = "none";
+
+          // CREATE CONNECTION 
+          $conn = new mysqli(
+            $servername,
+            $username,
+            $password,
+            $databasename
+          );
+
+          // GET CONNECTION ERRORS 
+          if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
           }
-          function electronics()
-          {
-            $list = glob("articles/*-E-*.php");
-            natsort($list);
-            foreach (array_reverse($list) as $filename) {
-              require_once($filename);
-            }
+
+          // SQL QUERY 
+          $query = "SELECT * FROM `articles` ORDER BY `date` DESC;";
+
+          // FETCHING DATA FROM DATABASE 
+          $result = $conn->query($query);
+
+          if ($result->num_rows > 0) {
+
+            // OUTPUT DATA OF EACH ROW INTO AN ARTICLE
+            while ($row = $result->fetch_assoc()) {
+              ?>
+              <a href="articles/<?php echo $row["url"] ?>">
+              <div class="dropshadow">
+              <article class="card mb-4">
+                <header class="card-header">
+                  <div class="card-meta">
+                    <time class="timeago" datetime="<?php echo $row["date"] ?>"></time> in
+                    <?php echo $row["type"] ?>
+                  </div>
+                    <h4 class="card-title">
+                      <?php echo $row["name"] ?>
+                    </h4>
+                </header>
+                  <div style="border-radius:10px">
+                    <img class="img-fluid"  src="img/<?php echo $row["url"] ?>/1.png" alt="" />
+                    <div style="position: absolute; bottom: 16px; right: 16px; background-color:#eeeeee; margin-left:150px; padding:10px; border-radius:10px; text-align:right;">
+                      <p><?php echo $row["subtitle"] ?></p>
+                    </div>
+                  </div>
+                </article><!-- /.card -->
+              </div>
+              
+              </a>
+            <?php }
           }
-          function music()
-          {
-            $list = glob("articles/*-M-*.php");
-            natsort($list);
-            foreach (array_reverse($list) as $filename) {
-              require_once($filename);
-            }
-          }
-          function other()
-          {
-            $list = glob("articles/*-O-*.php");
-            natsort($list);
-            foreach (array_reverse($list) as $filename) {
-              require_once($filename);
-            }
-          }
+
+          $conn->close();
 
           ?>
-
         </div>
-        <div class="col-md-3 ms-auto">
+        <div class="col-md-4 ms-auto">
 
           <?php require 'side.php'; ?>
 
