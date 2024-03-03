@@ -2,7 +2,7 @@
     <div class="card mb-4">
         <div class="card-body">
             <h4 class="card-title">About</h4>
-            <p class="card-text">My name is Eric Conrad. I Majored in Computer Science, and Minored in music at Dalhousie University. I post all sorts of projects here on my website.</p>
+            <p class="card-text">My name is Eric Conrad. I majored in Computer Science, and minored in music at Dalhousie University. I post all sorts of projects here on my website.</p>
         </div>
     </div><!-- /.card -->
 </aside>
