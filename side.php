@@ -24,11 +24,27 @@
             <?php } else { ?>
                 <h4 class="card-title">Filters</h4>
                     <form method="post">
+
+                        <?php if (!isset($_POST["electronics"])) {?>
                         <input type="submit" name="electronics" class="btn btn-light btn-sm mb-1" value="Electronics" />
-                        <input type="submit" name="music" class="btn btn-light btn-sm mb-1\" value="Music" />
-                        <input type="submit" name="other" class="btn btn-light btn-sm mb-1\" value="Other" />
+                        <?php } else {?>
+                        <a href="/" class="btn btn-secondary btn-sm mb-1">Electronics<a>
+                        <?php } ?>
+                        
+                        <?php if (!isset($_POST["music"])) {?>
+                            <input type="submit" name="music" class="btn btn-light btn-sm mb-1\" value="Music" />
+                        <?php } else {?>
+                        <a href="/" class="btn btn-secondary btn-sm mb-1">Music<a>
+                        <?php } ?>
+
+                        <?php if (!isset($_POST["other"])) {?>
+                            <input type="submit" name="other" class="btn btn-light btn-sm mb-1\" value="Other" />
+                        <?php } else {?>
+                        <a href="/" class="btn btn-secondary btn-sm mb-1">Other<a>
+                        <?php } ?>
+                        
                     </form>
-            <?php } ?>
+            <?php } ?>  
         </div>
     </div>
 </aside>

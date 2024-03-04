@@ -43,90 +43,99 @@
 </head>
 
 <body>
-<div id="page-container">
-        <div id="content-wrap">
-  <?php require 'header.php'; ?>
-  <main class="main pt-4">
+  <div id="page-container">
+    <div id="content-wrap">
+      <?php require 'header.php'; ?>
+      <main class="main pt-4">
 
-    <div class="container">
+        <div class="container">
 
-      <div class="row">
-        <div class="col-md-8">
-          <?php
+          <div class="row">
+            <div class="col-md-8">
+              <?php
 
-          // CHANGE THIS TO WHERE/HOWEVER YOU KEEP YOUR SQL CREDENTIALS
-          include "sql.php";
+              // CHANGE THIS TO WHERE/HOWEVER YOU KEEP YOUR SQL CREDENTIALS
+              include "sql.php";
 
-          $type = "none";
+              $type = "none";
 
-          // CREATE CONNECTION 
-          $conn = new mysqli(
-            $servername,
-            $username,
-            $password,
-            $databasename
-          );
+              // CREATE CONNECTION 
+              $conn = new mysqli(
+                $servername,
+                $username,
+                $password,
+                $databasename
+              );
 
-          // GET CONNECTION ERRORS 
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
+              // GET CONNECTION ERRORS 
+              if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+              }
 
-          // SQL QUERY 
-          $query = "SELECT * FROM `articles` ORDER BY `date` DESC;";
+              // SQL QUERY, FILTER BY TYPE IF USER FILTERED
+              if (isset($_POST["electronics"])) {
+                $query = "SELECT * FROM `articles` WHERE type='Electronics' ORDER BY `date` DESC;";
+              } else if (isset($_POST["music"])) {
+                $query = "SELECT * FROM `articles` WHERE type='Music' ORDER BY `date` DESC;";
+              } else if (isset($_POST["other"])) {
+                $query = "SELECT * FROM `articles` WHERE type='Other' ORDER BY `date` DESC;";
+              } else {
+                $query = "SELECT * FROM `articles` ORDER BY `date` DESC;";
+              }
 
-          // FETCHING DATA FROM DATABASE 
-          $result = $conn->query($query);
 
-          if ($result->num_rows > 0) {
+              // FETCHING DATA FROM DATABASE 
+              $result = $conn->query($query);
 
-            // OUTPUT DATA OF EACH ROW INTO AN ARTICLE
-            while ($row = $result->fetch_assoc()) {
-              ?>
-              <a href="articles/<?php echo $row["url"] ?>">
-                <div class="dropshadow">
-                  <article class="card mb-4">
-                    <header class="card-header">
-                      <div class="card-meta">
-                        <time class="timeago" datetime="<?php echo $row["date"] ?>"></time> in
-                        <?php echo $row["type"] ?>
-                      </div>
-                      <h4 class="card-title">
-                        <?php echo $row["name"] ?>
-                      </h4>
-                    </header>
-                    <div style="border-radius:10px">
-                      <img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="" />
-                      <div class="align-bottom"
-                        style="position: absolute; bottom: 16px; right: 16px; background-color: rgba(235, 235, 235, 0.8); margin-left:150px; padding:10px; border-radius:10px; text-align:right; ">
-                        
-                          <?php echo $row["subtitle"] ?>
-                        
-                      </div>
+              if ($result->num_rows > 0) {
+
+                // OUTPUT DATA OF EACH ROW INTO AN ARTICLE
+                while ($row = $result->fetch_assoc()) {
+                  ?>
+                  <a href="articles/<?php echo $row["url"] ?>">
+                    <div class="dropshadow">
+                      <article class="card mb-4">
+                        <header class="card-header">
+                          <div class="card-meta">
+                            <time class="timeago" datetime="<?php echo $row["date"] ?>"></time> in
+                            <?php echo $row["type"] ?>
+                          </div>
+                          <h4 class="card-title">
+                            <?php echo $row["name"] ?>
+                          </h4>
+                        </header>
+                        <div style="border-radius:10px">
+                          <img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="" />
+                          <div class="align-bottom"
+                            style="position: absolute; bottom: 16px; right: 16px; background-color: rgba(235, 235, 235, 0.8); margin-left:150px; padding:10px; border-radius:10px; text-align:right; ">
+
+                            <?php echo $row["subtitle"] ?>
+
+                          </div>
+                        </div>
+                      </article>
                     </div>
-                  </article>
-                </div>
 
-              </a>
-            <?php }
-          }
+                  </a>
+                <?php }
+              }
 
-          $conn->close();
+              $conn->close();
 
-          ?>
+              ?>
+            </div>
+            <div class="col-md-4 ms-auto">
+
+              <?php require 'side.php'; ?>
+
+            </div>
+          </div>
         </div>
-        <div class="col-md-4 ms-auto">
 
-          <?php require 'side.php'; ?>
-
-        </div>
-      </div>
+      </main>
     </div>
-
-  </main>
-        </div>
-  <?php require 'footer.php'; ?>
-        </div>
+    <?php require 'footer.php'; ?>
+  </div>
   <script src="js/app.js"></script>
 </body>
 
