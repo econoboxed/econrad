@@ -124,6 +124,13 @@
                                 move_uploaded_file($_FILES["fileToUpload"]["tmp_name"][$count], $target_file);
                                 $count++;
                             }
+
+                            // DO THE SAME FOR AUDIO FILE IF IT IS A MUSIC POST
+                            if (strcmp($type,"Music")==0){
+                                $target_dir = "mus/";
+                                $target_file = $target_dir . $url . ".mp3";
+                                move_uploaded_file($_FILES["musicToUpload"]["tmp_name"], $target_file);
+                            }
                             ?>
 
                             <div class="alert alert-success alert-dismissible fade show fixed-top" role="alert"
