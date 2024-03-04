@@ -57,9 +57,6 @@
                         <div class="col-md-9">
                             <?php
 
-                            $wholeUrl = explode('/', $_GET['url']);
-                            $url = $wholeUrl[1];
-
                             // CHANGE THIS TO WHERE/HOWEVER YOU KEEP YOUR SQL CREDENTIALS
                             include "sql.php";
 
@@ -78,11 +75,13 @@
                                 die("Connection failed: " . $conn->connect_error);
                             }
 
-                            // SQL QUERY 
-                            $query = "SELECT * FROM `articles` WHERE url='$url';";
+                            // SQL QUERY TO GET THE CURRENT URL OF THE WEBSITE AND REQUEST FROM DB
+														$query = $conn->prepare("SELECT * FROM `articles` WHERE url=?;");
+														$query->bind_param("s", explode('/', $_GET['url'])[1]);
 
                             // FETCHING DATA FROM DATABASE 
-                            $result = $conn->query($query);
+                            $query->execute();
+														$result = $query->get_result();
 
                             if ($result->num_rows > 0) {
 

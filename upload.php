@@ -103,16 +103,21 @@
                         $text = $_POST['atext'];
 
                         // MAKE SURE URL IS UNIQUE
-                        $query = "SELECT * FROM `articles` WHERE url='$url';";
+												$query = $conn->prepare("SELECT * FROM `articles` WHERE url=?;");
+												$query->bind_param("s", $_POST['aurl']);
 
-                        // FETCHING DATA FROM DATABASE 
-                        $result = $conn->query($query);
+												// FETCHING DATA FROM DATABASE 
+												$query->execute();
+												$result = $query->get_result();
 
                         if ($result->num_rows == 0) {
 
                             // ADD DATA TO DATABASE
-                            $query = "INSERT INTO `articles` (`name`,`subtitle`,`type`,`date`,`url`,`text`) VALUES ('$name','$subtitle','$type','$date','$url','$text');";
-                            $result = $conn->query($query);
+                            $query = $conn->prepare("INSERT INTO `articles` (`name`,`subtitle`,`type`,`date`,`url`,`text`) VALUES (?,?,?,?,?,?)");
+                            $query->bind_param("ssssss", $_POST['aname'], $_POST['asubtitle'], $_POST['atype'], $_POST['adate'], $_POST['aurl'], $_POST['atext']);
+														
+														$query->execute();
+														$result = $query->get_result();
 
                             // MAKE DIRECTORY FOR AND MOVE THE IMAGES
                             mkdir("img/" . $_POST['aurl']);
