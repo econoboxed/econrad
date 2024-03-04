@@ -6,7 +6,7 @@
         </div>
         <div class="col-auto">
             <label for="aurl">Article URL:</label>
-            <input type="text" class="form-control" name="aurl" required value="<?php echo $_POST['aurl']; ?>">
+            <input type="text" class="form-control" name="aurl" pattern="[\-A-Za-z0-9]+" title="Only alphanumeric and '-' allowed" required value="<?php echo $_POST['aurl']; ?>">
         </div>
         <div class="col-auto">
             <label for="atype">Article Tag:</label>

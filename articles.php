@@ -77,7 +77,7 @@
 
                             // SQL QUERY TO GET THE CURRENT URL OF THE WEBSITE AND REQUEST FROM DB
 														$query = $conn->prepare("SELECT * FROM `articles` WHERE url=?;");
-														$query->bind_param("s", explode('/', $_GET['url'])[1]);
+														$query->bind_param("s", explode('/', htmlspecialchars($_GET['url']))[1]);
 
                             // FETCHING DATA FROM DATABASE 
                             $query->execute();

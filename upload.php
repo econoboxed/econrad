@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+		<meta noindex>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Responsive Bootstrap 4 Magazine/Blog Theme">
@@ -82,25 +83,17 @@
                             // SHOW UPLOAD FORM IF LOGIN SUCSESSFUL
                             include 'compose.php';
                         }
+												$conn->close();
                     }
                     if (isset($_POST['aname'])) {
 
                         // LOGIC IF USER HAS SUBMITTED DATA TO DATABASE
-                    
                         $conn = new mysqli(
                             $servername,
                             htmlspecialchars($_POST["username"]),
                             htmlspecialchars($_POST["password"]),
                             $databasename
                         );
-
-                        // get all post variables to put into new row
-                        $name = $_POST['aname'];
-                        $subtitle = $_POST['asubtitle'];
-                        $date = $_POST['adate'];
-                        $type = $_POST['atype'];
-                        $url = $_POST['aurl'];
-                        $text = $_POST['atext'];
 
                         // MAKE SURE URL IS UNIQUE
 												$query = $conn->prepare("SELECT * FROM `articles` WHERE url=?;");
@@ -136,6 +129,7 @@
                                 $target_file = $target_dir . $url . ".mp3";
                                 move_uploaded_file($_FILES["musicToUpload"]["tmp_name"], $target_file);
                             }
+														$conn->close();
                             ?>
 
                             <div class="alert alert-success alert-dismissible fade show fixed-top" role="alert"
@@ -144,6 +138,7 @@
                                     class="alert-link">homepage</a>.
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
+														
 
                         <?php } else { ?>
 
