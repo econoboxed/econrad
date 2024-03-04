@@ -1,4 +1,4 @@
-<footer class="bg-dark text-center" style="padding:20px;">
+<footer id="footer" class="bg-dark text-center" style="padding:20px;">
   <p class="text-white-50"> econrad.org </p>
   
   <a class="text-white-50" rel="me" href="https://mastodon.social/@ericconrad">Social</a> 

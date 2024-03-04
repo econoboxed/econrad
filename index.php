@@ -14,16 +14,37 @@
   <link href="../css/style.css" rel="stylesheet">
 
   <style>
-  .dropshadow{
-    border-radius:5px;
-  }
-  .dropshadow:hover {
-    box-shadow: 0 0 11px rgba(22,22,22,.5); 
-  }
+    #page-container {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    #content-wrap {
+      padding-bottom: 6rem;
+      /* Footer height */
+    }
+
+    #footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 6rem;
+      /* Footer height */
+    }
+
+    .dropshadow {
+      border-radius: 5px;
+    }
+
+    .dropshadow:hover {
+      box-shadow: 0 0 11px rgba(22, 22, 22, .5);
+    }
   </style>
 </head>
 
 <body>
+<div id="page-container">
+        <div id="content-wrap">
   <?php require 'header.php'; ?>
   <main class="main pt-4">
 
@@ -63,26 +84,29 @@
             while ($row = $result->fetch_assoc()) {
               ?>
               <a href="articles/<?php echo $row["url"] ?>">
-              <div class="dropshadow">
-              <article class="card mb-4">
-                <header class="card-header">
-                  <div class="card-meta">
-                    <time class="timeago" datetime="<?php echo $row["date"] ?>"></time> in
-                    <?php echo $row["type"] ?>
-                  </div>
-                    <h4 class="card-title">
-                      <?php echo $row["name"] ?>
-                    </h4>
-                </header>
-                  <div style="border-radius:10px">
-                    <img class="img-fluid"  src="img/<?php echo $row["url"] ?>/1.png" alt="" />
-                    <div style="position: absolute; bottom: 16px; right: 16px; background-color:#eeeeee; margin-left:150px; padding:10px; border-radius:10px; text-align:right;">
-                      <p><?php echo $row["subtitle"] ?></p>
+                <div class="dropshadow">
+                  <article class="card mb-4">
+                    <header class="card-header">
+                      <div class="card-meta">
+                        <time class="timeago" datetime="<?php echo $row["date"] ?>"></time> in
+                        <?php echo $row["type"] ?>
+                      </div>
+                      <h4 class="card-title">
+                        <?php echo $row["name"] ?>
+                      </h4>
+                    </header>
+                    <div style="border-radius:10px">
+                      <img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="" />
+                      <div class="align-bottom"
+                        style="position: absolute; bottom: 16px; right: 16px; background-color: rgba(235, 235, 235, 0.8); margin-left:150px; padding:10px; border-radius:10px; text-align:right; ">
+                        
+                          <?php echo $row["subtitle"] ?>
+                        
+                      </div>
                     </div>
-                  </div>
-                </article><!-- /.card -->
-              </div>
-              
+                  </article>
+                </div>
+
               </a>
             <?php }
           }
@@ -100,9 +124,9 @@
     </div>
 
   </main>
-
+        </div>
   <?php require 'footer.php'; ?>
-
+        </div>
   <script src="js/app.js"></script>
 </body>
 

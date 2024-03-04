@@ -2,11 +2,14 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^(.*)$ /articles.php?url=$1 [L]
+RewriteRule ^articles(.*)$ /articles.php?url=$1 [L]
+RewriteRule ^electronics(.*)$ /articles.php?url=$1 [L]
+RewriteRule ^music(.*)$ /articles.php?url=$1 [L]
 
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-<FilesMatch "(header|footer|side)">
+
+<FilesMatch "(header|footer|side|sql)">
   Require all denied
 </FilesMatch>
