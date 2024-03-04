@@ -19,7 +19,7 @@
 
         #content-wrap {
             padding-bottom: 6rem;
-            /* Footer height */
+            /* FOOTER HEIGHT */
         }
 
         #footer {
@@ -27,7 +27,7 @@
             bottom: 0;
             width: 100%;
             height: 6rem;
-            /* Footer height */
+            /* FOOTER HEIGHT */
         }
     </style>
 
@@ -89,8 +89,8 @@
                     
                         $conn = new mysqli(
                             $servername,
-                            $_POST["username"],
-                            $_POST["password"],
+                            htmlspecialchars($_POST["username"]),
+                            htmlspecialchars($_POST["password"]),
                             $databasename
                         );
 

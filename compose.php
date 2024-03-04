@@ -42,7 +42,7 @@
         <div class="col-auto mb-3">
 
             <label for="fileToUpload[]">Article Photos:</label>
-            <input type="file" accept=".png" class="form-control-file" name="fileToUpload[]" id="fileToUpload" multiple
+            <input id="formFiles" type="file" accept=".png" class="form-control" name="fileToUpload[]" id="fileToUpload" multiple
                 required>
             <div id="photohelp" class="form-text">
                 PNGs only. The first PNG you select will be the article tumbnail.
@@ -51,7 +51,7 @@
         <div class="col-auto mb-3">
 
             <label for="musicToUpload">Music File:</label>
-            <input type="file" accept=".mp3" class="form-control-file" name="musicToUpload" id="fileToUpload">
+            <input id="formFile" type="file" accept=".mp3" class="form-control" name="musicToUpload" id="fileToUpload">
             <div id="photohelp" class="form-text">
                 MP3s only, only needed for music posts.
             </div>
