@@ -69,17 +69,20 @@
 							include 'login.php';
 
 						} else {
-							// CREATE CONNECTION 
-							$conn = new mysqli(
-								$servername,
-								$_POST["username"],
-								$_POST["password"],
-								$databasename
-							);
+							try {
+								// CREATE CONNECTION 
+								$conn = new mysqli(
+									$servername,
+									$_POST["username"],
+									$_POST["password"],
+									$databasename
+								);
 
-							// GET CONNECTION ERRORS 
-							if ($conn->connect_error) {
+								// SHOW UPLOAD FORM IF LOGIN SUCSESSFUL
+								include 'compose.php';
+								$conn->close();
 
+							} catch (mysqli_sql_exception $e) {
 								// SHOW LOGIN IF LOGIN FAILED
 								?>
 								<div class="alert alert-danger alert-dismissible fade show fixed-top" role="alert" style="margin:10px;">
@@ -88,22 +91,17 @@
 								</div>
 								<?php
 								include 'login.php';
-
-							} else {
-
-								// SHOW UPLOAD FORM IF LOGIN SUCSESSFUL
-								include 'compose.php';
 							}
-							$conn->close();
 						}
 					}
+
 					if (isset($_POST['aname'])) {
 
 						// LOGIC IF USER HAS SUBMITTED DATA TO DATABASE
 						$conn = new mysqli(
 							$servername,
-							htmlspecialchars($_POST["username"]),
-							htmlspecialchars($_POST["password"]),
+							$_POST["username"],
+							$_POST["password"],
 							$databasename
 						);
 
@@ -118,8 +116,11 @@
 						if ($result->num_rows == 0) {
 
 							// ADD DATA TO DATABASE
+							require_once "michelf/Markdown.inc.php";
+							$my_html = \Michelf\Markdown::defaultTransform(htmlspecialchars($_POST['atext']));
+
 							$query = $conn->prepare("INSERT INTO `articles` (`name`,`subtitle`,`type`,`date`,`url`,`text`) VALUES (?,?,?,?,?,?)");
-							$query->bind_param("ssssss", $_POST['aname'], $_POST['asubtitle'], $_POST['atype'], $_POST['adate'], $_POST['aurl'], $_POST['atext']);
+							$query->bind_param("ssssss", $_POST['aname'], $_POST['asubtitle'], $_POST['atype'], $_POST['adate'], $_POST['aurl'], $my_html);
 
 							$query->execute();
 							$result = $query->get_result();
@@ -136,7 +137,7 @@
 							}
 
 							// DO THE SAME FOR AUDIO FILE IF IT IS A MUSIC POST
-							if (strcmp($type, "Music") == 0) {
+							if (strcmp($_POST['atype'], "Music") == 0) {
 								$target_dir = "mus/";
 								$target_file = $target_dir . $url . ".mp3";
 								move_uploaded_file($_FILES["musicToUpload"]["tmp_name"], $target_file);
