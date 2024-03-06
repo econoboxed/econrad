@@ -1,18 +1,14 @@
 <header>
-	<nav class="navbar navbar-expand-md navbar-light bg-white absolute-top">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container">
-
-			<button class="navbar-toggler order-2 order-md-1" type="button" data-bs-toggle="collapse"
-				data-bs-target=".navbar-collapse" aria-controls="navbar-left navbar-right" aria-expanded="false"
-				aria-label="Toggle navigation">
+			<a class="navbar-brand" href="/">
+				<h1>econrad.ca</h1>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#links"
+				aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
-			<a class="navbar-brand mx-auto order-1 order-md-3" href="/">
-				<h1>econrad.org</h1>
-			</a>
-
-			<div class="collapse navbar-collapse order-4 order-md-4" id="navbar-right">
+			<div class="collapse navbar-collapse" id="links">
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
 						<a class="nav-link" target=”_blank” href="https://www.linkedin.com/in/conrade/">Social</a>
