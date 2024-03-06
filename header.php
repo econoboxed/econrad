@@ -2,7 +2,7 @@
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container">
 			<a class="navbar-brand" href="/">
-				<h1>econrad.ca</h1>
+				<h1>econrad.com</h1>
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#links"
 				aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
