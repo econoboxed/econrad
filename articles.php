@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<?php require("style.php") ?>
 
 <head>
 	<meta charset="utf-8">
@@ -10,7 +11,9 @@
 
 	<title>econrad.org</title>
 
-	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap-icons.css" rel="stylesheet">
+
 	<style>
 		#page-container {
 			position: relative;
@@ -42,6 +45,18 @@
 			width: 45%;
 			margin: 5px;
 			border-radius: 5px;
+		}
+
+		.link-button {
+			background: none;
+			border: none;
+			width: 100%;
+			text-align: left;
+			padding: .25rem 1rem;
+		}
+
+		.link-button:focus {
+			outline: none;
 		}
 	</style>
 </head>
@@ -154,7 +169,7 @@
 		</div>
 		<?php include "footer.php"; ?>
 	</div>
-	<script src="js/bootstrap.bundle.js"></script>
+  <script src="/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>

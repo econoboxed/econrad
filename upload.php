@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<?php require("style.php") ?>
 
 <head>
 	<meta charset="utf-8">
@@ -29,6 +30,18 @@
 			width: 100%;
 			height: 6rem;
 			/* FOOTER HEIGHT */
+		}
+
+		.link-button {
+			background: none;
+			border: none;
+			width: 100%;
+			text-align: left;
+			padding: .25rem 1rem;
+		}
+
+		.link-button:focus {
+			outline: none;
 		}
 	</style>
 

@@ -33,7 +33,7 @@
         <label for="atext" class="form-label">Article Text:</label>
         <textarea class="form-control" name="atext" rows="10"><?php echo $_POST['atext']; ?></textarea>
         <div id="photohelp" class="form-text">
-            Markdown is supported and required for paragraphs to work correctly.
+            Markdown is supported.
         </div>
     </div>
 

@@ -12,39 +12,46 @@
 	<div class="card mb-4">
 		<div class="card-body">
 			<?php
+			$buttonstyle = "";
+			if ($darkmode){
+				$buttonstyle = "btn-secondary";
+			}	else {
+				$buttonstyle = "btn-light";
+			}
+
 			switch ($type) {
 				case "Music": ?>
 					<h4 class="card-title">Tags</h4>
-					<p class=" btn-light btn-sm mb-1\">Music</p>
+					<p>Music</p>
 					<?php break;
 				case "Electronics": ?>
 					<h4 class="card-title">Tags</h4>
-					<p class=" btn-light btn-sm mb-1\">Electronics</p>
+					<p>Electronics</p>
 					<?php break;
 				case "Other": ?>
 					<h4 class="card-title">Tags</h4>
-					<p class=" btn-light btn-sm mb-1\">Other</p>
+					<p>Other</p>
 					<?php break;
 				default: ?>
 					<h4 class="card-title">Filters</h4>
 					<form method="post">
 
 						<?php if (!isset($_POST["electronics"])) { ?>
-							<input type="submit" name="electronics" class="btn btn-light btn-sm mb-1" value="Electronics" />
+							<input type="submit" name="electronics" class="btn <?php echo $buttonstyle?>" value="Electronics" />
 						<?php } else { ?>
-							<a href="/" class="btn btn-secondary btn-sm mb-1">Electronics<a>
+							<a href="/" class="btn btn-primary">Electronics<a>
 								<?php } ?>
 
 						<?php if (!isset($_POST["music"])) { ?>
-							<input type="submit" name="music" class="btn btn-light btn-sm mb-1\" value="Music" />
+							<input type="submit" name="music" class="btn <?php echo $buttonstyle?>" value="Music" />
 						<?php } else { ?>
-							<a href="/" class="btn btn-secondary btn-sm mb-1">Music<a>
+							<a href="/" class="btn btn-primary">Music<a>
 								<?php } ?>
 
 						<?php if (!isset($_POST["other"])) { ?>
-							<input type="submit" name="other" class="btn btn-light btn-sm mb-1\" value="Other" />
+							<input type="submit" name="other" class="btn <?php echo $buttonstyle?>" value="Other" />
 						<?php } else { ?>
-							<a href="/" class="btn btn-secondary btn-sm mb-1">Other<a>
+							<a href="/" class="btn btn-primary">Other<a>
 								<?php } ?>
 
 					</form>
