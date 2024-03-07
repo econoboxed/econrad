@@ -165,7 +165,7 @@
 		</div>
 		<?php require 'footer.php'; ?>
 	</div>
-	<script src="js/app.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
