@@ -13,6 +13,7 @@
 
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/bootstrap-icons.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
 	<style>
 		#page-container {
@@ -118,7 +119,7 @@
 													</h4>
 												</header>
 												<div style="border-radius:10px">
-													x<img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="" />
+													<img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="" />
 													<div class="align-bottom card-overlay">
 
 														<?php echo $row["subtitle"] ?>

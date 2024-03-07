@@ -13,6 +13,8 @@
 
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/bootstrap-icons.css" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+
 
 	<style>
 		#page-container {
