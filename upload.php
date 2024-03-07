@@ -77,7 +77,7 @@
 						if (strcmp($_POST['username'], 'root') == 0) { ?>
 
 							<div class="alert alert-danger alert-dismissible fade show fixed-top" role="alert" style="margin:10px;">
-								<strong>Error - Logging in as root is prohibited!</strong> Create or contact your DBA to setup a privileged
+								<strong><i class="bi bi-exclamation-triangle-fill"></i> Error - Logging in as root is prohibited!</strong> Create or contact your DBA to setup a privileged
 								non-root account.
 								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 							</div>
@@ -102,7 +102,7 @@
 								// SHOW LOGIN IF LOGIN FAILED
 								?>
 								<div class="alert alert-danger alert-dismissible fade show fixed-top" role="alert" style="margin:10px;">
-									<strong>Error - invalid credentials!</strong> You best not be trying to hack me.
+									<strong><i class="bi bi-exclamation-triangle-fill"></i> Error - invalid credentials!</strong> You best not be trying to hack me.
 									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 								</div>
 								<?php
@@ -170,7 +170,7 @@
 						<?php } else { ?>
 
 							<div class="alert alert-danger alert-dismissible fade show fixed-top" role="alert" style="margin:10px;">
-								<strong>Error - article already exists!</strong> Please ensure you're providing a unique URL.
+								<strong><i class="bi bi-exclamation-triangle-fill"></i> Error - article already exists!</strong> Please ensure you're providing a unique URL.
 								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 							</div>
 
