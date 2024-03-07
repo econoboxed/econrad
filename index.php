@@ -105,12 +105,12 @@
 								// OUTPUT DATA OF EACH ROW INTO AN ARTICLE
 								while ($row = $result->fetch_assoc()) {
 									?>
-									<a href="articles/<?php echo $row["url"] ?>">
+									<a href="articles/<?php echo $row["url"] ?>" class="text-decoration-none">
 										<div class="dropshadow">
 											<article class="card mb-4">
 												<header class="card-header">
 													<div class="card-meta">
-														<time class="timeago" datetime="<?php echo $row["date"] ?>"></time> in
+														<?php echo $row["date"] ?> in
 														<?php echo $row["type"] ?>
 													</div>
 													<h4 class="card-title">
@@ -118,7 +118,7 @@
 													</h4>
 												</header>
 												<div style="border-radius:10px">
-													<img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="" />
+													x<img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="" />
 													<div class="align-bottom card-overlay">
 
 														<?php echo $row["subtitle"] ?>
