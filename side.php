@@ -37,19 +37,19 @@
 					<form method="post">
 
 						<?php if (!isset($_POST["electronics"])) { ?>
-							<input type="submit" name="electronics" class="btn <?php echo $buttonstyle?>" value="Electronics" />
+							<input type="submit" name="electronics" class="btn <?php echo $buttonstyle?>" value="Electronics">
 						<?php } else { ?>
 							<a href="/" class="btn btn-primary">Electronics<a>
 								<?php } ?>
 
 						<?php if (!isset($_POST["music"])) { ?>
-							<input type="submit" name="music" class="btn <?php echo $buttonstyle?>" value="Music" />
+							<input type="submit" name="music" class="btn <?php echo $buttonstyle?>" value="Music">
 						<?php } else { ?>
 							<a href="/" class="btn btn-primary">Music<a>
 								<?php } ?>
 
 						<?php if (!isset($_POST["other"])) { ?>
-							<input type="submit" name="other" class="btn <?php echo $buttonstyle?>" value="Other" />
+							<input type="submit" name="other" class="btn <?php echo $buttonstyle?>" value="Other">
 						<?php } else { ?>
 							<a href="/" class="btn btn-primary">Other<a>
 								<?php } ?>

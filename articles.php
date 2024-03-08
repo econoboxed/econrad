@@ -76,7 +76,7 @@
 												<?php echo $row["name"] ?>
 											</h1>
 										</header>
-										<img class="img" src="../img/<?php echo $row["url"] ?>/1.png">
+										<img class="img" src="../img/<?php echo $row["url"] ?>/1.png" alt="Article Image">
 										<div style="margin: 10px;">
 											<h4>
 												<?php echo $row["subtitle"] ?>

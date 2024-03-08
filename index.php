@@ -82,7 +82,7 @@
 													</h4>
 												</header>
 												<div style="border-radius:10px">
-													<img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="" />
+													<img class="img-fluid" src="img/<?php echo $row["url"] ?>/1.png" alt="">
 													<div class="align-bottom card-overlay">
 
 														<?php echo $row["subtitle"] ?>

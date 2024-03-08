@@ -28,15 +28,15 @@
 						</a>
 						<ul class="dropdown-menu">
 							<li>
-								<form method="post" action="" class="dropdown-item" style="padding:0;">
+								<form method="post" class="dropdown-item" style="padding:0;">
 									<input type="hidden" name="darkmode" value="false">
-										<input style="width:100%;"type="submit" name="submit_param" value="Light" class="link-button">
+										<input style="width:100%;" type="submit" name="submit_param" value="Light" class="link-button">
 								</form>
 							</li>
 							<li>
-								<form method="post" action="" class="dropdown-item" style="padding:0;">
+								<form method="post" class="dropdown-item" style="padding:0;">
 									<input type="hidden" name="darkmode" value="true">
-										<input style="width:100%;"type="submit" name="submit_param" value="Dark" class="link-button">
+										<input style="width:100%;" type="submit" name="submit_param" value="Dark" class="link-button">
 								</form>
 							</li>
 						</ul>
