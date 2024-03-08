@@ -10,19 +10,19 @@
 			</button>
 			<div class="collapse navbar-collapse" id="links">
 				<ul class="navbar-nav ms-auto">
-					<li class="nav-item">
+					<li class="nav-item p-1">
 						<a class="nav-link" target=”_blank” href="https://www.linkedin.com/in/conrade/"><i
 								class="bi bi-linkedin"></i> Social </a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item p-1">
 						<a class="nav-link" target=”_blank” href="mailto://contact@econrad.org"><i class="bi bi-envelope-at"></i>
 							Contact </a>
 					</li>
-					<li class="nav-item">
+					<li class="nav-item p-1">
 						<a class="nav-link" target=”_blank” href="https://github.com/econoboxed"><i class="bi bi-github"></i> Github
 						</a>
 					</li>
-					<li class="nav-item dropdown">
+					<li class="nav-item dropdown p-1">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<i class="bi-circle-half"></i> Theme
 						</a>
