@@ -1,8 +1,8 @@
 <header>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary thinborder">
 		<div class="container">
 			<a class="navbar-brand" href="/">
-				<h1 style="cursor: pointer;">econrad.org</h1>
+				<h1>econrad.org</h1>
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#links"
 				aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">

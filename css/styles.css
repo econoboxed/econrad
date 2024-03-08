@@ -1,3 +1,11 @@
+:root,
+[data-bs-theme=light] {
+	--dropshadow-color: 22, 22, 22;
+}
+[data-bs-theme=dark] {
+	--dropshadow-color: 233, 233, 233;
+}
+
 @font-face {
 	font-family: lora;
 	src: url(/css/fonts/lora.woff2);
@@ -33,7 +41,7 @@ body {
 }
 
 .dropshadow:hover {
-	box-shadow: 0 0 11px rgba(22, 22, 22, .5);
+	box-shadow: 0 0 11px rgba(var(--dropshadow-color), .5);
 }
 
 .link-button {
@@ -63,4 +71,22 @@ body {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #7d6efd;
   --bs-btn-disabled-border-color: #7d6efd;
+}
+
+.nav-link:hover{
+  color: #7d0dfd;
+}
+
+.navbar-brand:hover{
+  color: #7d0dfd;
+}
+
+.thinborder{
+	--bs-card-border-width: var(--bs-border-width);
+  --bs-card-border-color: var(--bs-border-color-translucent);
+  --bs-card-border-radius: var(--bs-border-radius);
+  --bs-card-box-shadow: ;
+  --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-radius: var(--bs-card-border-radius);
 }
