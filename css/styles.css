@@ -47,3 +47,20 @@ body {
 .link-button:focus {
 	outline: none;
 }
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #7d0dfd;
+  --bs-btn-border-color: #7d3efd;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #7d5ed7;
+  --bs-btn-hover-border-color: #7d58ca;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #7d58ca;
+  --bs-btn-active-border-color: #7d53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #7d6efd;
+  --bs-btn-disabled-border-color: #7d6efd;
+}
