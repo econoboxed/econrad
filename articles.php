@@ -13,54 +13,11 @@
 
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/bootstrap-icons.css" rel="stylesheet">
+
+	<link href="/css/styles.css" rel="stylesheet">
+
 	<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
-
-	<style>
-		#page-container {
-			position: relative;
-			min-height: 100vh;
-		}
-
-		#content-wrap {
-			padding-bottom: 6rem;
-			/* Footer height */
-		}
-
-		#footer {
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-			height: 6rem;
-			/* Footer height */
-		}
-
-		.dropshadow {
-			border-radius: 5px;
-		}
-
-		.dropshadow:hover {
-			box-shadow: 0 0 11px rgba(22, 22, 22, .5);
-		}
-
-		.gallery {
-			width: 45%;
-			margin: 5px;
-			border-radius: 5px;
-		}
-
-		.link-button {
-			background: none;
-			border: none;
-			width: 100%;
-			text-align: left;
-			padding: .25rem 1rem;
-		}
-
-		.link-button:focus {
-			outline: none;
-		}
-	</style>
 </head>
 
 <body>

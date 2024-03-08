@@ -1,0 +1,45 @@
+@font-face {
+	font-family: adobe-garamond-pro;
+	src: url(/css/fonts/garamond.woff2);
+}
+body {
+	--bs-font-sans-serif: lora;
+	--bs-body-font-family: var(--bs-font-sans-serif);
+}
+#page-container {
+	position: relative;
+	min-height: 100vh;
+}
+
+#content-wrap {
+	padding-bottom: 6rem;
+	/* Footer height */
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 6rem;
+	/* Footer height */
+}
+
+.dropshadow {
+	border-radius: 5px;
+}
+
+.dropshadow:hover {
+	box-shadow: 0 0 11px rgba(22, 22, 22, .5);
+}
+
+.link-button {
+	background: none;
+	border: none;
+	width: 100%;
+	text-align: left;
+	padding: .25rem 1rem;
+}
+
+.link-button:focus {
+	outline: none;
+}
