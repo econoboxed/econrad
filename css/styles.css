@@ -1,9 +1,13 @@
 :root,
 [data-bs-theme=light] {
 	--dropshadow-color: 22, 22, 22;
+	--text-color: #212529;
+	--bg-color: #fff;
 }
 [data-bs-theme=dark] {
 	--dropshadow-color: 233, 233, 233;
+	--text-color: #dee2e6;
+	--bg-color: #212529;
 }
 
 @font-face {
@@ -50,10 +54,21 @@ body {
 	width: 100%;
 	text-align: left;
 	padding: .25rem 1rem;
+	color: var(--text-color);
 }
 
 .link-button:focus {
 	outline: none;
+}
+
+.link-button:hover {
+	color: #7d0dfd;
+	background: var(--bg-color);
+}
+
+.link-button:active {
+	color: #7d0dfd;
+	background: var(--bg-color);
 }
 
 .btn-primary {
@@ -74,7 +89,7 @@ body {
 }
 
 .nav-link:hover{
-  color: #7d0dfd;
+	color: #7d0dfd;
 }
 
 .navbar-brand:hover{
