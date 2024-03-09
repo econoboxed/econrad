@@ -119,5 +119,28 @@ body {
 	border-radius: .5rem; 
 	text-align:right; 
 	background-color: rgba(var(--bs-tertiary-bg-rgb), .8);
-	font-size: 3vh;
+}
+
+@media screen and (min-width: 551px) {
+	.card-overlay {
+			font-size: 1.0em;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.card-overlay {
+		font-size: .9em;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.card-overlay {
+		font-size: 1.15	em;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.card-overlay {
+		font-size: 1.35em;
+	}
 }
