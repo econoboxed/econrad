@@ -4,6 +4,7 @@
 	--text-color: #212529;
 	--bg-color: #fff;
 }
+
 [data-bs-theme=dark] {
 	--dropshadow-color: 233, 233, 233;
 	--text-color: #dee2e6;
@@ -14,6 +15,7 @@
 	font-family: lora;
 	src: url(/css/fonts/lora.woff2);
 }
+
 body {
 	--bs-font-sans-serif: lora;
 	--bs-body-font-family: var(--bs-font-sans-serif);
@@ -35,11 +37,13 @@ body {
 	height: 6rem;
 	/* Footer height */
 }
+
 .gallery {
 	width: 45%;
 	margin: 5px;
 	border-radius: 5px;
 }
+
 .dropshadow {
 	border-radius: 5px;
 }
@@ -104,4 +108,16 @@ body {
   --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
+}
+
+.card-overlay {
+	position: absolute; 
+	bottom: .5rem; 
+	right: .5rem; 
+	margin-left: 30%; 
+	padding: .5rem; 
+	border-radius: .5rem; 
+	text-align:right; 
+	background-color: rgba(var(--bs-tertiary-bg-rgb), .8);
+	font-size: 3vh;
 }
