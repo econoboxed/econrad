@@ -12,8 +12,6 @@ RewriteRule ^music(.*)$ /articles.php?url=$1 [L]
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
 
-
-<FilesMatch "(header|footer|side|sql|compose|login)">
+<FilesMatch "(header.php|footer.php|side.php|sql.php|compose.php|login.php|style.php)">
   Require all denied
 </FilesMatch>
-
