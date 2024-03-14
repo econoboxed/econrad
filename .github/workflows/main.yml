@@ -1,5 +1,5 @@
 on: push
-name: Publish Website Dry Run
+name: Publish Website
 jobs:
   web-deploy:
     name: 🚀 Deploy Website Every Commit
@@ -11,9 +11,9 @@ jobs:
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1
       with:
-        target-server: 170.187.192.100
-        remote-user: root
-        private-ssh-key: ${{ secrets.PRIVATE_SSH_KEY }}
-        ssh-port: 22
-        destination-path: ~/web/
+        target-server: ssh.econrad.me
+        remote-user: admin
+        private-ssh-key: ${{ secrets.PRIVATE_SSH_KEY_2 }}
+        ssh-port: 2222
+        destination-path: ~/Sites/econrad
         rsync-options: --archive --verbose --compress --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
