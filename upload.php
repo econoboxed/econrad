@@ -7,8 +7,7 @@
 	<META name="robots" content="noindex">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Responsive Bootstrap 4 Magazine/Blog Theme">
-	<meta name="author" content="Bootlab">
+	<meta name="description" content="Eric Conrad's Website and Blog">
 
 	<title>econrad.org</title>
 
