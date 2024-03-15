@@ -2,9 +2,8 @@
 	<nav class="navbar navbar-expand-lg bg-body-tertiary thinborder">
 		<div class="container">
 			<a class="navbar-brand" href="/">
-				<?php $url = pathinfo($_SERVER['SERVER_NAME'], PATHINFO_EXTENSION);?>
-				<h1>econrad.<?php echo ($url); ?>
-</h1>
+				<?php $url = pathinfo($_SERVER['SERVER_NAME'], PATHINFO_EXTENSION); ?>
+				<h1>econrad.<?php echo ($url); ?></h1>
 			</a>
 			<button class="navbar-toggler" type="button " data-bs-toggle="collapse" data-bs-target="#links"
 				aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,13 +31,13 @@
 							<li>
 								<form method="post" class="dropdown-item" style="padding:0;">
 									<input type="hidden" name="darkmode" value="false">
-										<input style="width:100%;" type="submit" name="submit_param" value="Light" class="link-button">
+									<input style="width:100%;" type="submit" name="submit_param" value="Light" class="link-button">
 								</form>
 							</li>
 							<li>
 								<form method="post" class="dropdown-item" style="padding:0;">
 									<input type="hidden" name="darkmode" value="true">
-										<input style="width:100%;" type="submit" name="submit_param" value="Dark" class="link-button">
+									<input style="width:100%;" type="submit" name="submit_param" value="Dark" class="link-button">
 								</form>
 							</li>
 						</ul>
