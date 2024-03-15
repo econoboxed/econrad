@@ -11,7 +11,7 @@ jobs:
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1
       with:
-        target-server: ssh.econrad.me
+        target-server: econrad.org
         remote-user: admin
         private-ssh-key: ${{ secrets.PRIVATE_SSH_KEY_2 }}
         ssh-port: 2222
